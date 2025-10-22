@@ -1,9 +1,12 @@
 from fastapi import FastAPI
-from backend.src.routers import notes
-from backend.src.models import Base
-from backend.src.database import engine
+from src.routers import notes
+from src.models import Base
+from src.database import engine
 
 app = FastAPI()
 Base.metadata.create_all(engine)
 
+@app.get('/')
+def root():
+    return {"message": "just a default msg"}
 app.include_router(notes.router)
