@@ -1,22 +1,23 @@
 <script>
 		import Draggable from './Draggable.svelte';
+        let { title, body } = $props();
 </script>
 
 <Draggable>
 	<div class="note">
         <div class="header">
-            <input type="bello" class="headerInput">
+            <input bind:value={title} class="headerInput">
         </div>
-        <div class="body">
-            <textarea class="bodyInput" on:mousedown|stopPropagation
-  on:touchstart|stopPropagation></textarea>
-        </div>
+<div class="body">
+    <textarea class="bodyInput" bind:value={body} on:mousedown|stopPropagation on:touchstart|stopPropagation></textarea>
+</div>
     </div>
 </Draggable>
 
 <style>
     .note {
         min-width: 200px;
+        border: 2px solid black;
         
     }
     .headerInput {
@@ -34,6 +35,7 @@
     .header {
         height: 30px;
         background-color: yellow;
+        border-bottom: 1px solid black;
     }
     .body {
         background-color: yellowgreen;
