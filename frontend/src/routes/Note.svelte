@@ -8,9 +8,9 @@
         <div class="header">
             <input bind:value={title} class="headerInput">
         </div>
-<div class="body">
-    <textarea class="bodyInput" bind:value={body} on:mousedown|stopPropagation on:touchstart|stopPropagation></textarea>
-</div>
+        <div class="body">
+            <textarea class="bodyInput" bind:value={body} on:mousedown|stopPropagation on:touchstart|stopPropagation></textarea>
+        </div>
     </div>
 </Draggable>
 

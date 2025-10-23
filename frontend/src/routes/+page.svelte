@@ -2,7 +2,9 @@
 	import Note from './Note.svelte';
 
 	let notes: { title: string; body: string }[] = [];
-	let i:int = 0;
+	let i = 0;
+
+	
 
 	function addNote() {
 		notes = [
